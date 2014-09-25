@@ -18,6 +18,7 @@ Current configs being used.
     "Git",
     "GitGutter",
     "Gitignore",
+    "HTML Boilerplate",
     "Markdown Preview",
     "MarkdownEditing",
     "Monokai Extended",
