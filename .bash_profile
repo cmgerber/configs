@@ -1,10 +1,13 @@
-
 #	----------
 #	PATHS
 #	----------
 
 # homebrews should always take precedence
 export PATH=/usr/local/bin:$PATH
+
+# go path
+export GOPATH=/Users/colingerber/go/
+export PATH=$GOPATH/bin:$PATH
 
 # Setting PATH for EPD_free-7.3-1
 # The orginal version is saved in .bash_profile.pysave
@@ -18,6 +21,10 @@ export PATH=/usr/local/bin:$PATH
 
 # added by Anaconda 1.6.1 installer
 export PATH="/Users/colingerber/anaconda/bin:$PATH:/usr/local/pgsql/bin"
+
+# add my custom modules to python path
+PYTHONPATH="/Users/colingerber/Documents/Programming/Personal/Python_modules"
+export ${PYTHONPATH}
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
@@ -35,7 +42,11 @@ export PATH=$(brew --prefix ruby)/bin:$PATH
 #	-------------------------
 #	INSTALLED CLI FUNCTIONS
 #	-------------------------
-# istats, imgurr, weather, htop
+# istats, imgurr, weather, htop, tmux, lsp
+# lsp:
+# -t : time since change
+# -s : size of files
+# -p : left align
 
 
 
@@ -69,7 +80,7 @@ alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgree
 
 function myenvs { cd /Users/colingerber/anaconda/envs; ls; cd -;}		# show my anaconda envs
 
-function profile { cd; emacs .bash_profile;}		# opens profile in emacs
+function profile { cd; nano .bash_profile;}		# opens profile in nano
 
 function weather { curl -s "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-94704}"|perl -ne '/<title>([^<]+)/&&printf "\x1B[0;34m%s\x1B[0m: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"';}		# gets the weather for the next two days
 
