@@ -23,8 +23,8 @@ export PATH=$GOPATH/bin:$PATH
 export PATH="/Users/colingerber/anaconda/bin:$PATH:/usr/local/pgsql/bin"
 
 # add my custom modules to python path
-PYTHONPATH="/Users/colingerber/Documents/Programming/Personal/Python_modules"
-export ${PYTHONPATH}
+PYTHONPATH="${PYTHONPATH}:/Users/colingerber/Documents/Programming/Personal/Python_modules"
+export PYTHONPATH
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
